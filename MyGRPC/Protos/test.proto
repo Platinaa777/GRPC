@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+option csharp_namespace = "MyGRPC";
+
+package test;
+
+service Users {
+    rpc GetAllUsers(AllUsersRequest) returns (AllUsersResponse);
+    rpc UpdateUser(UpdateUserRequest) returns (UserResponse);
+    rpc CreateUser(CreateUserRequest) returns (UserResponse);
+    rpc DeleteUser(DeleteUserRequest) returns (AllUsersResponse);
+}
+
+message DeleteUserRequest {
+    int32 id = 1;
+}
+
+message CreateUserRequest {
+    string name = 2;
+}
+
+message UpdateUserRequest {
+    int32 id = 1;
+    string name = 2;
+}
+
+message AllUsersRequest {
+
+}
+
+message AllUsersResponse {
+    repeated UserResponse list_users = 1;
+}
+
+message UserResponse {
+    int32 id = 1;
+    string name = 2;
+}
+

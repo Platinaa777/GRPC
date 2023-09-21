@@ -1,0 +1,2 @@
+obj\Debug\net7.0\Protos/Start.cs \
+obj\Debug\net7.0\Protos/StartGrpc.cs: Protos/start.proto
